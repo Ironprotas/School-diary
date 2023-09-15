@@ -107,6 +107,11 @@ builder.Services.AddSwaggerGen(setup =>
         }
     };
 
+
+
+
+
+
     setup.AddSecurityDefinition(jwtSecurityScheme.Reference.Id, jwtSecurityScheme);
 
     setup.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -128,7 +133,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
 
-builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.AddAutoMapper(typeof(MappingProfile));  
 
 var app = builder.Build();
 

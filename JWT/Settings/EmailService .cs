@@ -24,7 +24,7 @@ namespace JWT.Settings
             using (var smtpClient = new SmtpClient())
             {
                 await smtpClient.ConnectAsync("smtp.yandex.ru", 25, false);
-                    await smtpClient.AuthenticateAsync(username, password); /// ввести данные почты 
+                    await smtpClient.AuthenticateAsync(username, password);
                 await smtpClient.SendAsync(emailMessage);
 
                 await smtpClient.DisconnectAsync(true);
