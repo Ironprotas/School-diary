@@ -7,19 +7,19 @@ using System.Diagnostics.Metrics;
 
 namespace JWT.Repositories.Implementations
 {
-    public class EvaluationsRepository : BaseRepository<Evaluations> , IEvaluationsRepository 
+    public class EvaluationsRepository : BaseRepository<Models.Evaluations> , IEvaluationsRepository 
     {
         private ApplicationDbContext Context { get; set; }
         public EvaluationsRepository(ApplicationDbContext context) : base(context)
         {
             Context = context;
         }
-        public async Task<List<Evaluations>> GetEvaluationsByLessonIds(List<int> lessonIds)
+        public async Task<List<Models.Evaluations>> GetEvaluationsByLessonIds(List<int> lessonIds)
         {
             return await Context.Evaluations.Where(e => lessonIds.Contains(e.LessonId)).ToListAsync();
          
         }
-        public async Task<List<Evaluations>> GetEvaluationsByLessonIdAndUserId(int lessonId, string userId)
+        public async Task<List<Models.Evaluations>> GetEvaluationsByLessonIdAndUserId(int lessonId, string userId)
         {
             return await Context.Evaluations
                 .Include(e => e.Lesson)
@@ -38,7 +38,7 @@ namespace JWT.Repositories.Implementations
             return await Context.Evaluations.Where(x => x.UserId == userId).Select(x => x.LessonId).ToListAsync();
         }
 
-        public async Task<List<Evaluations>> GetEvaluationsForUser(string userId)
+        public async Task<List<Models.Evaluations>> GetEvaluationsForUser(string userId)
         {
             return await Context.Evaluations.Where(x => x.UserId == userId).ToListAsync();
         }

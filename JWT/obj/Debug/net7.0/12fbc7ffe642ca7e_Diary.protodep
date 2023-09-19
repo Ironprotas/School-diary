@@ -1,0 +1,5 @@
+obj\Debug\net7.0\Protos/Diary.cs \
+obj\Debug\net7.0\Protos/DiaryGrpc.cs: C:/Users/gunte/.nuget/packages/grpc.tools/2.58.0/build/native/include/google/protobuf/empty.proto\
+ C:/Users/gunte/.nuget/packages/grpc.tools/2.58.0/build/native/include/google/protobuf/duration.proto\
+ C:/Users/gunte/.nuget/packages/grpc.tools/2.58.0/build/native/include/google/protobuf/timestamp.proto\
+ Protos/Diary.proto

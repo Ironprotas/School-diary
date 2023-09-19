@@ -1,0 +1,6 @@
+C:\Project\Routeam\School-diary\SchoolDiary\obj\Debug\net7.0\SchoolDiary.csproj.AssemblyReference.cache
+C:\Project\Routeam\School-diary\SchoolDiary\obj\Debug\net7.0\SchoolDiary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Project\Routeam\School-diary\SchoolDiary\obj\Debug\net7.0\SchoolDiary.AssemblyInfoInputs.cache
+C:\Project\Routeam\School-diary\SchoolDiary\obj\Debug\net7.0\SchoolDiary.AssemblyInfo.cs
+C:\Project\Routeam\School-diary\SchoolDiary\obj\Debug\net7.0\SchoolDiary.csproj.CoreCompileInputs.cache
+C:\Project\Routeam\School-diary\SchoolDiary\obj\Debug\net7.0\SchoolDiary.MvcApplicationPartsAssemblyInfo.cache

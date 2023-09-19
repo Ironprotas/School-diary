@@ -14,7 +14,7 @@ public class AppUser : IdentityUser
 
     public int? WorkClassId { get; set; } // Для учителя
 
-    public Class? Class { get; set; }
+    public  JWT.Models.Class? Class { get; set; }
 
     public string? ParentId { get; set; }
 

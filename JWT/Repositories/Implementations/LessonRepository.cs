@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace JWT.Repositories.Implementations
 {
-    public class LessonRepository: BaseRepository<Lesson>, ILessonRepository
+    public class LessonRepository: BaseRepository<Models.Lesson>, ILessonRepository
     {
         private ApplicationDbContext Context { get; set; }
     public LessonRepository(ApplicationDbContext context) : base(context)

@@ -1,0 +1,2 @@
+obj\Release\net7.0\Protos/Class.cs \
+obj\Release\net7.0\Protos/ClassGrpc.cs: Protos/Class.proto

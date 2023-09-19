@@ -1,0 +1,87 @@
+﻿syntax = "proto3";
+
+package homew_work;
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto"; 
+
+message Date {
+  google.protobuf.Timestamp value = 1;
+}
+
+
+
+message ResponseHomeWorkDto {
+  int32 Id = 1;
+  string Name = 2;
+  string HomeWork = 3;
+}
+
+message HomeWorkDto{
+         string Work = 1;
+         int32 LessonId = 2; 
+
+}
+
+service HomeWorkService {
+  // Добавление ДЗ
+  rpc AddHomeWork(AddHomeWorkRequest) returns (AddHomeWorkResponse);
+
+  // Получение ДЗ
+  rpc GetHomeWork(GetHomeWorkRequest) returns (GetHomeWorkResponse);
+
+  // Получение ДЗ пользователя
+  rpc GetHomeUser(GetHomeUserRequest) returns (GetHomeUserResponse);
+
+  // Получение ДЗ ребенка
+  rpc GetHomeWorkParent(GetHomeWorkParentRequest) returns (GetHomeWorkParentResponse);
+
+  // Удаление ДЗ
+  rpc DeleteHomeWork(DeleteHomeWorkRequest) returns (google.protobuf.Empty);
+
+  // Редактирование ДЗ
+  rpc EditHomeWork(EditHomeWorkRequest) returns (google.protobuf.Empty);
+}
+
+message AddHomeWorkRequest {
+  HomeWorkDto info = 1;
+}
+
+message AddHomeWorkResponse {
+  int32 homework_id = 1;
+}
+
+message GetHomeWorkRequest {
+  Date date = 1;
+}
+
+message GetHomeWorkResponse {
+  repeated ResponseHomeWorkDto homeworks = 1;
+}
+
+message GetHomeUserRequest {
+  Date date = 1;
+  string user_name = 2;
+}
+
+message GetHomeUserResponse {
+  repeated ResponseHomeWorkDto homeworks = 1;
+}
+
+message GetHomeWorkParentRequest {
+  Date date = 1;
+  string name_student = 2;
+}
+
+message GetHomeWorkParentResponse {
+  repeated ResponseHomeWorkDto homeworks = 1;
+}
+
+message DeleteHomeWorkRequest {
+  int32 id_lesson = 1;
+}
+
+message EditHomeWorkRequest {
+  int32 id_lesson = 1;
+  string home_work = 2;
+}

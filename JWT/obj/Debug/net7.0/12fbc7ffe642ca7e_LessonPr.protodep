@@ -1,0 +1,3 @@
+obj\Debug\net7.0\Protos/LessonPr.cs \
+obj\Debug\net7.0\Protos/LessonPrGrpc.cs: C:/Users/gunte/.nuget/packages/grpc.tools/2.58.0/build/native/include/google/protobuf/empty.proto\
+ Protos/LessonPr.proto

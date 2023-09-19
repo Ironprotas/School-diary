@@ -1,0 +1,2 @@
+C:\Project\Routeam\School-diary\JWT\obj\Release\net7.0\JWT.csproj.AssemblyReference.cache
+C:\Project\Routeam\School-diary\JWT\obj\Release\net7.0\JWT.GeneratedMSBuildEditorConfig.editorconfig

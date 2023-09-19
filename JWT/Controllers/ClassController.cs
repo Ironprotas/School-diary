@@ -39,7 +39,7 @@ namespace JWT.Controllers
         {
            
 
-            var addClass = new Class();
+            var addClass = new Models.Class();
             _mapper.Map(inform, addClass);
             var result = _classRepository.Create(addClass);
             return Ok(result);

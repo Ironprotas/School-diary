@@ -29,14 +29,14 @@ namespace JWT.Mappings
 
             CreateMap<ResponseLessonDto, LessonWithDateDto>();
 
-            CreateMap<Class, ClassDto>();
+            CreateMap<Models.Class, ClassDto>();
 
-            CreateMap<EvanuationsDto, Evaluations>().ForMember(dest => dest.Evaluaton, opt => opt.MapFrom(src => src.Evaluaton))
+            CreateMap<EvanuationsDto, Models.Evaluations>().ForMember(dest => dest.Evaluaton, opt => opt.MapFrom(src => src.Evaluaton))
                 .ForMember(dest => dest.UserId, opt => opt.Ignore()).ForMember(dest => dest.LessonId, opt => opt.MapFrom(src => src.LessonId));
 
-            CreateMap< Evaluations, ResponseEvanuationsDto>().ForMember(dest => dest.Evanuation, opt => opt.MapFrom(src => src.Evaluaton));
+            CreateMap< Models.Evaluations, ResponseEvanuationsDto>().ForMember(dest => dest.Evanuation, opt => opt.MapFrom(src => src.Evaluaton));
 
-            CreateMap<Evaluations, ResponseEvanuationbyLessonDto>().ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Lesson.Name))
+            CreateMap<Models.Evaluations, ResponseEvanuationbyLessonDto>().ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Lesson.Name))
                 .ForMember(dest => dest.Evanations, opt => opt.Ignore()).ForMember(dest => dest.Date, opt => opt.Ignore());
 
 

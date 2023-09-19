@@ -10,8 +10,6 @@ namespace JWT.Dto
         [JsonIgnore]
         public int Id { get; set; }
 
-//      public List<int> LessonIds { get; set; }
-
         public int LessonId { get; set; }
 
         public DateOnly Date { get; set; }

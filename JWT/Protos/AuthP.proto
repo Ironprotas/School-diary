@@ -1,0 +1,95 @@
+syntax = "proto3";
+
+package auth;
+
+
+
+service MainService {
+
+  rpc RegisterUser(RegisterUserRequest) returns (RegisterUserResponse);
+
+  rpc LoginUser(LoginUserRequest) returns (LoginUserResponse);
+
+  rpc EditUser(EditUserRequest) returns (EditUserResponse);
+
+  rpc GetUserInfo(GetUserInfoRequest) returns (GetUserInfoResponse);
+
+  rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);
+
+  rpc AddParentToStudent(AddParentToStudentRequest) returns (AddParentToStudentResponse);
+
+
+  rpc RemoveStudentFromParent(RemoveStudentFromParentRequest) returns (RemoveStudentFromParentResponse);
+
+}
+
+message RegisterUserRequest {
+  string name = 1;
+  string email = 2;
+  string password = 3;
+  string fistName = 4;
+  string lastName = 5; 
+}
+
+message RegisterUserResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message LoginUserRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginUserResponse {
+  bool success = 1;
+  string access_token = 2;
+}
+
+message EditUserRequest {
+  string username = 1;
+  string name = 2;
+  string email = 3;
+  string fistName = 4;
+  string lastName = 5; 
+}
+
+message EditUserResponse {
+  bool success = 1;
+}
+
+message GetUserInfoRequest {
+  string username = 1;
+}
+
+message GetUserInfoResponse {
+  string name = 1;
+  string email = 2;
+  string fistName = 4;
+  string lastName = 5; 
+}
+
+message DeleteUserRequest {
+  string username = 1;
+}
+
+message DeleteUserResponse {
+  bool success = 1;
+}
+
+message AddParentToStudentRequest {
+  string parent_username = 1;
+  string student_username = 2;
+}
+
+message AddParentToStudentResponse {
+  bool success = 1;
+}
+
+message RemoveStudentFromParentRequest {
+  string student_username = 1;
+}
+
+message RemoveStudentFromParentResponse {
+  bool success = 1;
+}

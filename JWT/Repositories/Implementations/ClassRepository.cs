@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace JWT.Repositories.Implementations
 {
-    public class ClassRepository : BaseRepository<Class>, IClassRepository
+    public class ClassRepository : BaseRepository<Models.Class>, IClassRepository
     {
         private ApplicationDbContext Context { get; set; }
         public ClassRepository(ApplicationDbContext context) : base(context)
@@ -31,7 +31,7 @@ namespace JWT.Repositories.Implementations
             }
 
         }
-        public async Task<Class> GetClassWithStudents(string nameClass, int numberClass)
+        public async Task<Models.Class> GetClassWithStudents(string nameClass, int numberClass)
         {
             return await Context.Classes
                 .Where(cl => cl.Name == nameClass && cl.Number == numberClass)
@@ -39,7 +39,7 @@ namespace JWT.Repositories.Implementations
                 .FirstOrDefaultAsync();
         }
 
-        public async Task<List<Class>> GetAllClass()
+        public async Task<List<Models.Class>> GetAllClass()
         {
             return await Context.Classes.ToListAsync();
         }

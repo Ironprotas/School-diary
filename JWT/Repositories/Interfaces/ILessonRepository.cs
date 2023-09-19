@@ -2,7 +2,7 @@
 
 namespace JWT.Repositories.Interfaces
 {
-    public interface ILessonRepository : IBaseRepository<Lesson>
+    public interface ILessonRepository : IBaseRepository<Models.Lesson>
     {
         Task<int> GetLessonId(string name);
 

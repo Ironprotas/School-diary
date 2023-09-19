@@ -15,12 +15,14 @@ namespace JWT.Base
         { }
         public DbSet<AppUser> Users { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
-        public DbSet<Lesson> Lessons { get; set; }
-        public DbSet<Class> Classes { get; set; }
+        public DbSet<JWT.Models.Lesson> Lessons { get; set; }
+
+        //   public DbSet<Lesson> Lessons { get; set; }
+        public DbSet<JWT.Models.Class> Classes { get; set; }
         public DbSet<HomeWork> HomeWorks { get; set; }
         public DbSet<ScheduleLesson> ScheduleLessons { get; set; }
         public DbSet<SettingsLesson> SettingsLessons { get; set; }
-        public DbSet<Evaluations> Evaluations { get; set; }
+        public DbSet<JWT.Models.Evaluations> Evaluations { get; set; }
         public object ScheduleLesson { get; internal set; }
 
         protected override void OnModelCreating(ModelBuilder builder)

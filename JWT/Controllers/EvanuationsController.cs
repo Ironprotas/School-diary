@@ -4,7 +4,6 @@ using JWT.Dto;
 using JWT.Models;
 using JWT.Repositories.Implementations;
 using JWT.Repositories.Interfaces;
-using JWT.Settings;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -61,7 +60,7 @@ public class EvanuationsController : Controller
                     if (role == "Masterteacher" || lesson.SettingsLesson.TeacherId == teachers.Id)
                     {
 
-                        var evanuation = _mapper.Map<Evaluations>(info, opt => opt.AfterMap((src, dest) => dest.UserId = user.Id));
+                        var evanuation = _mapper.Map<JWT.Models.Evaluations>(info, opt => opt.AfterMap((src, dest) => dest.UserId = user.Id));
 
                         _evalationsRepository.Create(evanuation);
 
@@ -169,7 +168,7 @@ public class EvanuationsController : Controller
                 if (sendmail)
                 {
 
-                  EmailService emailService = new EmailService();
+               //   EmailService emailService = new EmailService();
                  // await emailService.SendMailAsync(user.Email, $"Оценки {userName}", response.ToHtmlString());
                 }
 

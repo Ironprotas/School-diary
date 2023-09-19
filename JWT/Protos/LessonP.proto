@@ -1,0 +1,80 @@
+﻿syntax = "proto3";
+
+package lesson;
+
+
+import "google/protobuf/empty.proto";
+
+service LessonService {
+  // Создание предмета урока
+  rpc CreateSubjectLesson(CreateSubjectLessonRequest) returns (CreateSubjectLessonResponse);
+
+  // Создание урока
+  rpc CreateLesson(CreateLessonRequest) returns (CreateLessonResponse);
+
+  // Получение информации об уроке
+  rpc GetInfoLesson(GetInfoLessonRequest) returns (GetInfoLessonResponse);
+
+  // Добавление учителя в урок
+  rpc AddTeacherInClass(AddTeacherInClassRequest) returns (google.protobuf.Empty);
+
+  // Удаление урока
+  rpc DeleteLesson(DeleteLessonRequest) returns (google.protobuf.Empty);
+
+  // Удаление учителя из урока
+  rpc DeleteTeacher(DeleteTeacherRequest) returns (google.protobuf.Empty);
+
+  // Редактирование урока
+  rpc EditLesson(EditLessonRequest) returns (EditLessonResponse);
+}
+
+message CreateSubjectLessonRequest {
+  string lesson_name = 1;
+}
+
+message CreateSubjectLessonResponse {
+  LessonDto lesson = 1;
+}
+
+message CreateLessonRequest {
+  LessonDto info = 1;
+}
+
+message CreateLessonResponse {
+  int32 lesson_id = 1;
+}
+
+message GetInfoLessonRequest {
+  string name = 1;
+}
+
+message GetInfoLessonResponse {
+  LessonDto lesson = 1;
+}
+
+message AddTeacherInClassRequest {
+  int32 id_lesson = 1;
+  string user_name = 2;
+}
+
+message DeleteLessonRequest {
+  int32 lessonid = 1;
+}
+
+message DeleteTeacherRequest {
+  int32 lesson_id = 1;
+}
+
+message EditLessonRequest {
+  LessonDto info = 1;
+  int32 lesson_id = 2;
+}
+
+message EditLessonResponse {
+  LessonDto lesson = 1;
+}
+
+message LessonDto {
+  string cabinet = 1;
+  int32 number = 2;
+}

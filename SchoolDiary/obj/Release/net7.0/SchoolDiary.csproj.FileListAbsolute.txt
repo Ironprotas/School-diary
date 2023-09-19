@@ -1,0 +1,2 @@
+C:\Project\Routeam\School-diary\SchoolDiary\obj\Release\net7.0\SchoolDiary.csproj.AssemblyReference.cache
+C:\Project\Routeam\School-diary\SchoolDiary\obj\Release\net7.0\SchoolDiary.GeneratedMSBuildEditorConfig.editorconfig

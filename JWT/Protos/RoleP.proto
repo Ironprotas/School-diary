@@ -1,0 +1,48 @@
+﻿syntax = "proto3";
+
+package role;
+
+import "google/protobuf/empty.proto";
+
+service RoleService {
+  rpc CreateRole(CreateRoleRequest) returns (google.protobuf.Empty);
+  rpc AddRoleUser(AddRoleUserRequest) returns (google.protobuf.Empty);
+  rpc DeleteUserRole(DeleteUserRoleRequest) returns (google.protobuf.Empty);
+  rpc DeleteRole(DeleteRoleRequest) returns (google.protobuf.Empty);
+  rpc CheckRole(CheckRoleRequest) returns (CheckRoleResponse);
+  rpc CheckRoles(CheckRolesRequest) returns (CheckRolesResponse);
+}
+
+message CreateRoleRequest {
+  string role_name = 1;
+}
+
+message AddRoleUserRequest {
+  string user_name = 1;
+  string role_name = 2;
+}
+
+message DeleteUserRoleRequest {
+  string user_name = 1;
+  string role_name = 2;
+}
+
+message DeleteRoleRequest {
+  string role_name = 1;
+}
+
+message CheckRoleRequest {
+  string username = 1;
+}
+
+message CheckRoleResponse {
+  repeated string roles = 1;
+}
+
+message CheckRolesRequest {
+  string role_name = 1;
+}
+
+message CheckRolesResponse {
+  repeated string users = 1;
+}

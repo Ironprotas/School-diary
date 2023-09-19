@@ -1,0 +1,94 @@
+﻿syntax = "proto3";
+
+package evaluations;
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto"; 
+
+message Date {
+  google.protobuf.Timestamp value = 1;
+}
+
+message ResponseEvanuationAllDto {
+  string lesson_name = 1;
+  repeated google.protobuf.Int32Value evanations = 2;
+  Date date = 3;
+  string user_name = 4;
+}
+
+message EvanuationsDto{
+	   int32 id = 1;
+       string UserName = 2;
+       int32 LessonId = 3;
+       int32 Evaluaton = 4;
+
+}
+
+message ResponseEvanuationsDto{
+    int32 Evanuation = 1;
+}
+
+message ResponseEvanuationbyLessonDto {
+  int32 id = 1;
+  string name = 2;
+  repeated ResponseEvanuationsDto evanations = 3;
+  Date date = 4;
+}
+
+
+service EvaluationsService {
+  // Добавление оценки ученику
+  rpc SendEvaluation(SendEvaluationRequest) returns (google.protobuf.Empty);
+
+  // Получение оценок пользователя по одному предмету
+  rpc GetEvaluationsUserOneObject(GetEvaluationsUserOneObjectRequest) returns (GetEvaluationsUserOneObjectResponse);
+
+  // Получение всех оценок по всем предметам одного пользователя
+  rpc GetAllEvaluationsOneUser(GetAllEvaluationsOneUserRequest) returns (GetAllEvaluationsOneUserResponse);
+
+  // Получение оценок своего ребенка
+  rpc GetAllEvaluationsMyStudent(GetAllEvaluationsMyStudentRequest) returns (GetAllEvaluationsMyStudentResponse);
+
+  // Получение всех оценок по классу
+  rpc GetAllEvaluationsClass(GetAllEvaluationsClassRequest) returns (GetAllEvaluationsClassResponse);
+}
+
+message SendEvaluationRequest {
+  EvanuationsDto info = 1;
+}
+
+message GetEvaluationsUserOneObjectRequest {
+  string user_name = 1;
+  string name_lesson = 2;
+}
+
+message GetEvaluationsUserOneObjectResponse {
+  repeated EvanuationsDto evaluations = 1;
+}
+
+message GetAllEvaluationsOneUserRequest {
+  string user_name = 1;
+}
+
+message GetAllEvaluationsOneUserResponse {
+  repeated ResponseEvanuationbyLessonDto evaluations = 1;
+}
+
+message GetAllEvaluationsMyStudentRequest {
+  string user_name = 1;
+  bool send_mail = 2;
+}
+
+message GetAllEvaluationsMyStudentResponse {
+  repeated ResponseEvanuationbyLessonDto evaluations = 1;
+}
+
+message GetAllEvaluationsClassRequest {
+  string name_class = 1;
+  int32 number_class = 2;
+}
+
+message GetAllEvaluationsClassResponse {
+  repeated ResponseEvanuationAllDto evaluations = 1;
+}

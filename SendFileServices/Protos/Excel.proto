@@ -1,0 +1,53 @@
+﻿syntax = "proto3";
+
+service ReportService {
+  rpc RegisterUser(UserRegistration) returns (UserRegistration);
+  rpc GenerateStudentReport(StudentReportRequest) returns (StudentReportResponse);
+  rpc GenerateClassReport(ClassReportRequest) returns (ClassReportResponse);
+  rpc GenerateLessonReport(LessonReportRequest) returns (LessonReportResponse);
+}
+
+// Message для регистрации пользователя
+message UserRegistration {
+  string userName = 1;
+  string password = 2;
+}
+
+// Message для запроса отчета по студенту
+message StudentReportRequest {
+  string userName = 1;
+  int32 classYear = 2; // Опциональное поле, чтобы фильтровать по году класса
+}
+
+// Message для ответа с данными отчета
+message StudentReportResponse {
+  bytes fileContent = 1;
+}
+
+// Message для запроса отчета по классу
+message ClassReportRequest {
+  repeated string lessonNames = 1; // Список названий уроков
+}
+
+// Message для ответа с данными отчета по классу
+message ClassReportResponse {
+  bytes fileContent = 1;
+}
+
+// Message для запроса отчета по уроку
+message LessonReportRequest {
+  string lessonName = 1;
+}
+
+// Message для ответа с данными отчета по уроку
+message LessonReportResponse {
+  bytes fileContent = 1;
+  repeated ClassAverage classAverages = 2;
+}
+
+// Message для хранения средней оценки класса
+message ClassAverage {
+  string name = 1;
+  int32 number = 2;
+  double averageScore = 3;
+}

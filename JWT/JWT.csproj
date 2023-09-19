@@ -15,9 +15,16 @@
   </ItemGroup>
 
   <ItemGroup>
+	  <PackageReference Include="Google.Protobuf" Version="3.24.3" />
+	  <PackageReference Include="Google.Protobuf.Tools" Version="3.24.3" />
+	  <PackageReference Include="Grpc.AspNetCore" Version="2.57.0" />
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
       <PackageReference Include="ClosedXML" Version="0.102.1" />
+      <PackageReference Include="Grpc.Tools" Version="2.58.0">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
       <PackageReference Include="MailKit" Version="4.2.0" />
     <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.4" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.9" />
@@ -42,11 +49,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Gen\" />
     <Folder Include="Migrations\" />
+    <Folder Include="Protos\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
+	  <None Update="google\protobuf\empty.proto">
+		  <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+	  </None>
+	  <None Update="google\protobuf\wrappers.proto">
+		  <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+	  </None>
+	  <!-- Добавьте строки для других необходимых файлов, например, google/type/date.proto -->
+	  <None Update="google\type\date.proto">
+		  <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+	  </None>
   </ItemGroup>
 
 </Project>

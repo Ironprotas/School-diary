@@ -1,0 +1,70 @@
+﻿syntax = "proto3";
+
+package class;
+
+service ClassService {
+  rpc CreateClass (CreateClassRequest) returns (CreateClassResponse);
+
+  rpc GetClass (GetClassRequest) returns (GetClassResponse);
+
+  rpc AddStudentInClass (AddStudentInClassRequest) returns (AddStudentInClassResponse);
+
+  rpc DeleteStudent (DeleteStudentRequest) returns (DeleteStudentResponse);
+ 
+  rpc EditClass (EditClassRequest) returns (EditClassResponse);
+}
+
+message CreateClassRequest {
+  string name = 1;
+  int32 number = 2;
+}
+
+
+message CreateClassResponse {
+  bool success = 1;
+}
+
+message GetClassRequest {
+  string name = 1;
+  int32 number = 2;
+}
+
+
+message GetClassResponse {
+    string name = 1;
+    int32 number = 2;
+}
+
+// Запрос на добавление ученика в класс
+message AddStudentInClassRequest {
+  string name = 1;
+  string nameClass = 2;
+  int32 numberClass = 3;
+}
+
+// Ответ на запрос добавления ученика в класс
+message AddStudentInClassResponse {
+  bool success = 1;
+}
+
+// Запрос на удаление ученика из класса
+message DeleteStudentRequest {
+  string userName = 1;
+}
+
+// Ответ на запрос удаления ученика из класса
+message DeleteStudentResponse {
+  bool success = 1;
+}
+
+// Запрос на редактирование класса
+message EditClassRequest {
+  int32 classId = 1;
+  string name = 2;
+  int32 number = 3;
+}
+
+// Ответ на запрос редактирования класса
+message EditClassResponse {
+  bool success = 1;
+}

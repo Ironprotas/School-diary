@@ -8,7 +8,7 @@ using JWT.Base;
 using JWT.Repositories.Implementations;
 using JWT.Repositories.Interfaces;
 using JWT.Mappings;
-using JWT.Settings;
+
 
 
 var people = new List<AppUser> { };

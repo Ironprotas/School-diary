@@ -47,7 +47,7 @@ public class LessonController : Controller
         if (subjectLesson == null)
         {
 
-            var namesubject = new Lesson { Name = lessonName };
+            var namesubject = new JWT.Models.Lesson { Name = lessonName };
             _lessonRepository.Create(namesubject);
             return Ok(namesubject);
 

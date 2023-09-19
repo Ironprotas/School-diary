@@ -1,0 +1,97 @@
+﻿syntax = "proto3";
+
+package diary;
+
+import "google/protobuf/empty.proto"; 
+import "google/protobuf/duration.proto";
+import "google/protobuf/timestamp.proto"; 
+
+message Date {
+  google.protobuf.Timestamp value = 1;
+}
+
+
+message ScheduleDto {
+  int32 Id = 1 [deprecated = true];
+  int32 LessonId = 2;
+  Date Date = 3;
+  int32 NameLessonId = 4;
+  int32 ClassId = 5;
+  int32 ScheduleId = 6;
+}
+
+message ClassDto {
+  int32 Number = 1;
+  string Name = 2;
+}
+
+
+message ResponseScheduleByClassDto {
+  ClassDto Class = 1;
+  repeated LessonWithDateDto Lessons = 2;
+}
+
+message LessonWithDateDto{
+  repeated ResponseLessonDto lessons = 1;
+  Date date = 2;
+}
+
+message ResponseLessonDto {
+  int32 Id = 1;
+  string Name = 2;
+  int32 Cabinet = 3;
+  google.protobuf.Duration StartLesson = 4;
+  google.protobuf.Duration EndLesson = 5;
+}
+
+
+service DiaryService {
+  // Добавление расписания
+  rpc AddSchedule(AddScheduleRequest) returns (google.protobuf.Empty);
+
+  // Получение расписания пользователя
+  rpc GetSchedule(GetScheduleRequest) returns (ResponseScheduleByClassDto);
+
+  // Получение своего расписания
+  rpc MySchedules(google.protobuf.Empty) returns (ResponseScheduleByClassDto);
+
+  // Получение всего расписания
+  rpc GetAllSchedules(GetAllSchedulesRequest) returns (ResponseScheduleByClassDto);
+
+  // Получение расписания одного класса
+  rpc GetOneClassSchedule(GetOneClassScheduleRequest) returns (ResponseScheduleByClassDto);
+
+  // Редактирование расписания
+  rpc EditSchedule(EditScheduleRequest) returns (ScheduleDto);
+
+  // Получение расписания ребенка
+  rpc GetMyStudentSchedules(GetMyStudentSchedulesRequest) returns (ResponseScheduleByClassDto);
+}
+
+message AddScheduleRequest {
+  ScheduleDto info = 1;
+}
+
+message GetScheduleRequest {
+  string name = 1;
+}
+
+message GetAllSchedulesRequest {
+  int32 day = 1;
+  int32 month = 2;
+  int32 year = 3;
+  bool export = 4;
+}
+
+message GetOneClassScheduleRequest {
+  int32 number_class = 1;
+  string name_class = 2;
+}
+
+message EditScheduleRequest {
+  ScheduleDto info = 1;
+}
+
+message GetMyStudentSchedulesRequest {
+  string name_student = 1;
+}
