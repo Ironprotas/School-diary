@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using JWT;
 
 namespace JWT.Controllers
 
@@ -15,6 +16,8 @@ namespace JWT.Controllers
         private readonly Microsoft.AspNetCore.Identity.RoleManager<IdentityRole> _roleManager;
         private readonly Microsoft.AspNetCore.Identity.UserManager<AppUser> _userManager;
 
+     
+
         public RoleController(Microsoft.AspNetCore.Identity.RoleManager<IdentityRole> roleManager, Microsoft.AspNetCore.Identity.UserManager<AppUser> userManager)
         {
             _roleManager = roleManager;
@@ -25,6 +28,7 @@ namespace JWT.Controllers
         [HttpPost("CreateRole")]
         public async Task<IActionResult> CreateRole(string roleName)
         {
+
             if (ModelState.IsValid)
             {
 

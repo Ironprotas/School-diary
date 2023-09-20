@@ -16,4 +16,8 @@
 	<PackageReference Include="Google.Protobuf.Tools" Version="3.24.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Gen\" />
+  </ItemGroup>
+
 </Project>

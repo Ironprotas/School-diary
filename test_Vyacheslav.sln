@@ -12,11 +12,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MikroServices", "..\MikroServices\MikroServices.csproj", "{CDBF8600-1C74-42B3-899E-945D62C49491}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendFileServices", "SendFileServices\SendFileServices.csproj", "{3040F9CD-7456-4B79-9569-47E8031E10E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SendFileServices", "SendFileServices\SendFileServices.csproj", "{3040F9CD-7456-4B79-9569-47E8031E10E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendEmailServices", "SendEmailServices\SendEmailServices.csproj", "{0B63C54E-D5BE-48D3-88E8-D898FC25A3A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SendEmailServices", "SendEmailServices\SendEmailServices.csproj", "{0B63C54E-D5BE-48D3-88E8-D898FC25A3A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolDiary", "SchoolDiary\SchoolDiary.csproj", "{22CA3272-B6A9-40C0-81E3-3C726938EAB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolDiary", "SchoolDiary\SchoolDiary.csproj", "{22CA3272-B6A9-40C0-81E3-3C726938EAB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

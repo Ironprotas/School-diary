@@ -11,8 +11,9 @@ using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using System.Text.Json;
 using static LessonController;
+using SendFileSerives;
 
-namespace JWT.Controllers
+namespace SendFileSerives.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

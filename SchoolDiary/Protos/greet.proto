@@ -1,1 +1,25 @@
+<<<<<<< HEAD
 syntax = "proto3";
+=======
+syntax = "proto3";
+
+option csharp_namespace = "SchoolDiary";
+
+package greet;
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply);
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message HelloReply {
+  string message = 1;
+}
+>>>>>>> 8c94dc0626e3ac354c55cfc926c757182ed9d31f
