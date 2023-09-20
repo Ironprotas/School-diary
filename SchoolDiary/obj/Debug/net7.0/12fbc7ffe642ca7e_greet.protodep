@@ -1,6 +1,1 @@
-<<<<<<< HEAD
 obj\Debug\net7.0\Protos/Greet.cs: Protos/greet.proto
-=======
-obj\Debug\net7.0\Protos/Greet.cs \
-obj\Debug\net7.0\Protos/GreetGrpc.cs: Protos/greet.proto
->>>>>>> 8c94dc0626e3ac354c55cfc926c757182ed9d31f

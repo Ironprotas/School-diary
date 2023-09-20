@@ -2,12 +2,11 @@
 using JWT.Gen;
 
 
-
 namespace JWT.Services
 
 
 {
-    public class MainServices :  
+    public class MainServices :
     {
     }
 }

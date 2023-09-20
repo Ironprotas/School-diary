@@ -3,5 +3,4 @@ C:\Project\Routeam\School-diary\SendFileServices\obj\Debug\net7.0\SendFileServic
 C:\Project\Routeam\School-diary\SendFileServices\obj\Debug\net7.0\SendFileServices.AssemblyInfoInputs.cache
 C:\Project\Routeam\School-diary\SendFileServices\obj\Debug\net7.0\SendFileServices.AssemblyInfo.cs
 C:\Project\Routeam\School-diary\SendFileServices\obj\Debug\net7.0\SendFileServices.csproj.CoreCompileInputs.cache
-C:\Project\Routeam\School-diary\SendFileServices\obj\Debug\net7.0\SendFileServices.MvcApplicationPartsAssemblyInfo.cs
 C:\Project\Routeam\School-diary\SendFileServices\obj\Debug\net7.0\SendFileServices.MvcApplicationPartsAssemblyInfo.cache

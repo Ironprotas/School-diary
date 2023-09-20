@@ -52,6 +52,7 @@
     <Folder Include="Gen\" />
     <Folder Include="Migrations\" />
     <Folder Include="Protos\" GrpcServices="Server" />
+    <Folder Include="Gen\" />
   </ItemGroup>
 
   <ItemGroup>
